@@ -24,16 +24,17 @@
 
     <div class="grid__container">
         <h2>SmartClass Web Application</h2>
-      <form action="http://127.0.0.1/swe/collective_ui/index.html" method="post" class="form form--login">
+      <form action="" method="post" class="form form--login">
+      {% csrf_token %}
 
         <div class="form__field">
           <label class="fontawesome-user" for="login__username"><span class="hidden">Username</span></label>
-          <input id="login__username" name="uname" type="text" class="form__input" placeholder="Username" required>
+          <input id="login__username" name="username" type="text" class="form__input" placeholder="Username" required>
         </div>
 
         <div class="form__field">
           <label class="fontawesome-lock" for="login__password"><span class="hidden">Password</span></label>
-          <input id="login__password" name="passwd" type="password" class="form__input" placeholder="Password" required>
+          <input id="login__password" name="password" type="password" class="form__input" placeholder="Password" required>
         </div>
 
         <div class="form__field">
@@ -41,8 +42,9 @@
         </div>
 
       </form>
-
-      <p class="text--center">Not a member? <a href="/signup">Sign up now</a> <span class="fontawesome-arrow-right"></span></p>
+      {% block content %}
+      {% endblock %}
+      
 
     </div>
 
