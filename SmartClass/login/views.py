@@ -18,7 +18,7 @@ def index(request):
 		cursor.execute(sql)
 		results = cursor.fetchall()
 		print results
-		if results==():
+		if results==():	#no rollno for following entrie
 			print "rollno not present"
 			connection.close()
 			return render(request, 'login/noroll.html')

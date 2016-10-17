@@ -24,7 +24,7 @@
 
 	<!-- Custom-Stylesheet-Links -->
 		<link rel="stylesheet" href="/static/css/style1.css" 														type="text/css" media="all">
-		
+		<link rel="stylesheet" href="/static/css/qupload.css" 														type="text/css" media="all">
 		<link rel="stylesheet" href="/static/css/feed.css"
 		    type="text/css" media="all">
 		<link rel="stylesheet" href="/static/css/clndr.css" 														type="text/css" media="all">
@@ -157,13 +157,13 @@
 							<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
 
 								<ul class="resp-tabs-list agileits w3layouts">
-									<li class="resp-tab-item aits w3layouts" aria-controls="tab_item-1" role="tab"><span>Notifications</span></li>
+									<li class="resp-tab-item aits w3layouts" aria-controls="tab_item-1" role="tab"><span>Available</span></li>
 									
-									<li class="resp-tab-item w3ls agileits" aria-controls="tab_item-2" role="tab"><span>Notes</span></li>
+									<li class="resp-tab-item w3ls agileits" aria-controls="tab_item-2" role="tab"><span>Upload</span></li>
 									
-									<li class="resp-tab-item aits agileits" aria-controls="tab_item-3" role="tab"><span>Assingnment</span></li>
+									<li class="resp-tab-item aits agileits" aria-controls="tab_item-3" role="tab"><span>Check</span></li>
 									
-									<li class="resp-tab-item w3ls w3layouts" aria-controls="tab_item-4" role="tab"><span>Notice</span></li>
+									<li class="resp-tab-item w3ls w3layouts" aria-controls="tab_item-4" role="tab"><span>Results</span></li>
 									
 									<div class="clear"> </div>
 								</ul>
@@ -171,77 +171,59 @@
 								<div class="resp-tabs-container agileits w3layouts">
 
 									<div class="tab-1 resp-tab-content w3ls w3layouts" aria-labelledby="tab_item-1">
-										<div class="content">
+										
+									<div class="content">
 			<div class="content-top">
 				
 					
 					<ul>
 						
-						{% for c in feeds %}
+						{% for c in quizzez %}
 							{{ c|safe }}
 						{% endfor %}
 							
 					</ul>
 					<p><a href="#">Load more</a></p>
 			</div>
-		</div>
-		
-									</div>
-
-									<div class="tab-2 resp-tab-content aits agileits" aria-labelledby="tab_item-2">
-										<div class="content">
-			<div class="content-top">
-				
-					
-					<ul>
-						
-						{% for cs in notes %}
-							{{ cs|safe }}
-						{% endfor %}
-							
-					</ul>
-					<p><a href="#">Load more</a></p>
 			</div>
 		</div>
+
+									<div class="tab-2 resp-tab-content aits agileits" aria-labelledby="tab_item-2">
+												<div class="agile-its1">
+	<h2>File Upload</h2>
+	<div class="w3layouts1">
+	<p>Upload your Assingnment in docs,pdf or jpeg image format.You can also drag and drop the file.</p>
+		<div class="photos-upload-view">
+			<form id="upload" action="#" method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+				<input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+					<div class="agileinfo1">
+					<input type="submit" class="choose" value="Choose file..">
+					<h3>OR</h3>
+						<input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+						<div id="filedrag">drag and drop files here</div>
+					</div>
+			</form>
+			<div id="messages">
+				<p>Status Messages</p>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<script src="/static/js/filedrag.js"></script>
+
+
+		</div>
+</div>
+												
 									</div>
 
 									<div class="tab-3 resp-tab-content w3ls agileits" aria-labelledby="tab_item-3">
-										<div class="content">
-			<div class="content-top">
-				
-					
-					<ul>
-						
-						{% for csc in assing %}
-							{{ csc|safe }}
-						{% endfor %}
-							
-					</ul>
-					<p><a href="#">Load more</a></p>
-			</div>
-		</div>
+										
 									</div>
 
 									<div class="tab-4 resp-tab-content aits w3layouts" aria-labelledby="tab_item-4">
-										<div class="content">
-			<div class="content-top">
-				
-					
-					<ul>
-						
-						{% for cscs in notice %}
-							{{ cscs|safe }}
-						{% endfor %}
+										
 							
-					</ul>
-					<p><a href="#">Load more</a></p>
-			</div>
-		</div>
-									</div>
-
-								</div>
-
-							</div>
 
 						</div>
 

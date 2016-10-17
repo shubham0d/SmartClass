@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^signup/$', 'login.views.signup', name='signup'),
     url(r'^success/$', 'login.views.success', name='success'),
     #url(r'^home/$', 'userhome.views.notify', name='notify'),
-    url(r'^home/$', include('userhome.urls'))
+    url(r'^home/$', include('userhome.urls')),
+    url(r'^quiz/$', 'userhome.views.quiz', name='quiz'),
 ]
