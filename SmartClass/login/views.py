@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .models import LoginInfo
 from django.db import connection
-
+from django.http import HttpResponse
 #from .forms import NameForm
 
 #Create your views here.
@@ -28,7 +28,9 @@ def index(request):
 				passwd=rows[0]
         	if password == passwd:
         		print "sucessfully login"
-        		return HttpResponseRedirect('/home')
+        		response=HttpResponseRedirect('/home')
+        		response.set_cookie('user', username)
+        		return response
 
 
         	else:

@@ -24,7 +24,7 @@
 
 	<!-- Custom-Stylesheet-Links -->
 		<link rel="stylesheet" href="/static/css/style1.css" 														type="text/css" media="all">
-		
+		<link rel="stylesheet" href="/static/css/header-user-dropdown.css">
 		<link rel="stylesheet" href="/static/css/feed.css"
 		    type="text/css" media="all">
 		<link rel="stylesheet" href="/static/css/clndr.css" 														type="text/css" media="all">
@@ -71,6 +71,30 @@
 
 	<!-- Body -->
 	<body onload="startTime()">
+
+
+
+			<header class="header-user-dropdown">
+
+	<div class="header-limiter">
+		<h1><a href="#">Welcome {{ luser }}</a></h1>
+
+		
+
+		<div class="header-user-menu">
+		
+			<img src="/static/images/2.png" alt="User Image"/>
+
+			<ul>
+				<li><a href="#">Settings</a></li>
+				<li><a href="#">Payments</a></li>
+				<li><a href="#" class="highlight">Logout</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+</header>
 
 		<h1>SmartClass Home</h1>
 
