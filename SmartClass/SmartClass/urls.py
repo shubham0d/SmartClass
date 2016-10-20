@@ -24,4 +24,5 @@ urlpatterns = [
     #url(r'^home/$', 'userhome.views.notify', name='notify'),
     url(r'^home/$', include('userhome.urls')),
     url(r'^quiz/$', 'userhome.views.quiz', name='quiz'),
+    url(r'^logout/$', 'login.views.logout', name='logout'),
 ]

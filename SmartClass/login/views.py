@@ -79,3 +79,8 @@ def signup(request):
 	return render(request, 'signup/signup.html')
 
 
+def logout(request):
+	val = ''
+	response=HttpResponseRedirect('/')
+	response.set_cookie('user', val)
+	return response
