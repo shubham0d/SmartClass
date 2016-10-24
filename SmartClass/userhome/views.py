@@ -7,6 +7,7 @@ max=0
 min=0
 runno=0
 nomore=0
+user_rollno=""
 #activity=0
 def notify(request):
 	global max
@@ -214,6 +215,7 @@ def quiz(request):
 	lastdate=[]
 	path=[]
 	ftext=[]
+	global user_rollno
 	if 'user' in request.COOKIES:
 		print request.COOKIES['user']
 		luser = request.COOKIES['user']
@@ -240,7 +242,55 @@ def quiz(request):
 				line5 = "<p><span>Date:"+str(date[m])+"</span></p></li>"
 				ftext.append(line1+line2+line3+line4+line5)
 				m=m+1
+		if request.method == 'POST':
+				#saving the grades submitted
+				grade1 = request.POST['std1']
+				grade2 = request.POST['std2']
+				grade3 = request.POST['std3']
+				print grade1,grade2,grade3
+				if grade1!="oo":
+					sql = "UPDATE rgenerate_rgrades SET grd1='"+grade1+"' WHERE rollno='"+user_rollno+"';"
+					cursor.execute(sql)
 
-		return render(request, 'quiz/index.html',{'quizzez':ftext})
+				if grade2!="oo":
+					sql = "UPDATE rgenerate_rgrades SET grd2='"+grade2+"' WHERE rollno='"+user_rollno+"';"
+					cursor.execute(sql)
+				if grade3!="oo":
+					sql = "UPDATE rgenerate_rgrades SET grd2='"+grade2+"' WHERE rollno='"+user_rollno+"';"
+					cursor.execute(sql)
+
+		#cheking section starts here
+		sql = "select rollno from login_logininfo where uname = '"+luser+"';"
+		cursor.execute(sql)
+		results = cursor.fetchall()
+		#get the rollno first
+		for rows in results:
+			user_rollno = rows[0]
+		#now get the random alloted students rollno
+		sql = "select st1 from rgenerate_rgrades where rollno = '"+user_rollno+"';"
+		cursor.execute(sql)
+		results = cursor.fetchall()
+		if results==(): #means he doesn't submitted
+			return render(request, 'quiz/index.html',{'quizzez':ftext, 'luser':luser})
+		else:
+			for rows in results:
+				st1 = rows[0]
+			
+			sql = "select st2 from rgenerate_rgrades where rollno = '"+user_rollno+"';"
+			cursor.execute(sql)
+			results = cursor.fetchall()
+			for rows in results:
+				st2 = rows[0]
+
+			sql = "select st3 from rgenerate_rgrades where rollno = '"+user_rollno+"';"
+			cursor.execute(sql)
+			results = cursor.fetchall()
+			for rows in results:
+				st3 = rows[0]
+
+
+			return render(request, 'quiz/index.html', {'quizzez':ftext, 'luser':luser, 'st1':st1, 'st2':st2, 'st3':st3 })
+
+		return render(request, 'quiz/index.html',{'quizzez':ftext, 'luser':luser})
 	else:
 		return HttpResponseRedirect('/')

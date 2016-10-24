@@ -24,6 +24,8 @@
 
 	<!-- Custom-Stylesheet-Links -->
 		<link rel="stylesheet" href="/static/css/style1.css" 														type="text/css" media="all">
+            
+		<link rel="stylesheet" href="/static/css/header-user-dropdown.css">
 		<link rel="stylesheet" href="/static/css/sform.css" 														type="text/css" media="all">
 		<link rel="stylesheet" href="/static/css/qupload.css" 														type="text/css" media="all">
 		<link rel="stylesheet" href="/static/css/feed.css"
@@ -72,6 +74,27 @@
 
 	<!-- Body -->
 	<body onload="startTime()">
+	<header class="header-user-dropdown">
+
+	<div class="header-limiter">
+		<h1><a href="#">Welcome {{ luser }}</a></h1>
+
+		
+
+		<div class="header-user-menu">
+		
+			<img src="/static/images/2.png" alt="User Image"/>
+
+			<ul>
+				<li><a href="#">Settings</a></li>
+				<li><a href="#">Payments</a></li>
+				<li><a href="#" class="highlight">Logout</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+</header>
 
 		<h1>SmartClass Home</h1>
 
@@ -86,7 +109,7 @@
 				<ul>
 					<li>
 						<div class="item-container agileits w3layouts">
-						<a href='#'>
+						<a href='/home'>
 							<div class="item-top aits">Home</div>
 							
 							<div class="item-bottom w3l">Home</div></a>
@@ -219,23 +242,29 @@
 									</div>
 
 									<div class="tab-3 resp-tab-content w3ls agileits" aria-labelledby="tab_item-3">
+									<center><p>Submit before 20 April 2016</p></center>
+									
 									<div class="content">
 									<div class="content-top">
+										
+										
 										<li>
-										<embed src="/static/uploads/test.pdf" width="800px" height="800px" />
+										<embed src="/static/uploads/{{ st1 }}" width="1000px" height="800px" />
 										</li>
 										<ul>
-        
+        <form action="" method="post">
+        {% csrf_token %}
         <li>
-            <label for="car">What's my options:</label>
-            <select id="car">
-                <option>A</option>
-                <option>AB</option>
-                <option>B</option>
-                <option>BC</option>
-                <option>C</option>
-                <option>D</option>
-                <option>He's gone&hellip;</option>
+            <label for="st1">What's my options:</label>
+            <select id="car" name="std1">
+            	<option value="oo">Select</option>
+                <option value="A">A</option>
+                <option value="AB">AB</option>
+                <option value="B">B</option>
+                <option value="BC">BC</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">He's gone&hellip;</option>
             </select>
         </li>
        
@@ -249,6 +278,7 @@
         <button type="submit" class="action">Call to action</button>
         <button type="reset" class="right">Reset</button>
     </p>
+    
 									</div>
 									</div>
 									</br>
@@ -259,21 +289,22 @@
 										<div class="content">
 									<div class="content-top">
 										<li>
-										<embed src="/static/uploads/test.pdf" width="800px" height="800px" />
+										<embed src="/static/uploads/{{ st2 }}" width="1000px" height="800px" />
 
 										</li>
 										 <ul>
         
         <li>
-            <label for="car">What's my options:</label>
-            <select id="car">
-                <option>A</option>
-                <option>AB</option>
-                <option>B</option>
-                <option>BC</option>
-                <option>C</option>
-                <option>D</option>
-                <option>He's gone&hellip;</option>
+            <label for="st2">What's my options:</label>
+            <select id="car" name="std2">
+            	<option value="oo">Select</option>
+                <option value="A">A</option>
+                <option value="AB">AB</option>
+                <option value="B">B</option>
+                <option value="BC">BC</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">He's gone&hellip;</option>
             </select>
         </li>
        
@@ -297,21 +328,22 @@
 										<div class="content">
 									<div class="content-top">
 										<li>
-										<embed src="/static/uploads/test.pdf" width="800px" height="800px" />
+										<embed src="/static/uploads/{{ st3 }}" width="1000px" height="800px" />
 										</li>
 
 										<ul>
         
         <li>
-            <label for="car">What's my options:</label>
-            <select id="car">
-              <option>A</option>
-                <option>AB</option>
-                <option>B</option>
-                <option>BC</option>
-                <option>C</option>
-                <option>D</option>
-                <option>He's gone&hellip;</option>
+            <label for="st3">What's my options:</label>
+            <select id="car" name="std3">
+            	<option value="oo">Select</option>
+              	<option value="A">A</option>
+                <option value="AB">AB</option>
+                <option value="B">B</option>
+                <option value="BC">BC</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">He's gone&hellip;</option>
             </select>
         </li>
        
@@ -325,6 +357,7 @@
         <button type="submit" class="action">Call to action</button>
         <button type="reset" class="right">Reset</button>
     </p>
+    </form>
 									</div>
 									</div>
 									</br>
