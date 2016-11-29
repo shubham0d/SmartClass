@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class rgrades(models.Model):
+class rgrades1(models.Model):
 	rollno = models.CharField(max_length = 10)
 	submit =  models.BooleanField(default=False)
 	st1 = models.CharField(max_length = 10, null=True)

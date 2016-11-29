@@ -13,6 +13,7 @@ def index(request):
 		username = request.POST['username']
 		password = request.POST['password']
 		cursor = connection.cursor()
+		print username
 		# Execute the SQL command
 		sql = "select passwd from login_logininfo where uname='"+username+"';"
 		cursor.execute(sql)

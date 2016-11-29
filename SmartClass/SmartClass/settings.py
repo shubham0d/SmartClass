@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'SmartClass.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'SmartClass',
+        'NAME': 'SmartClass1',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': 'localhost',

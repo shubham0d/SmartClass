@@ -11,7 +11,7 @@ def generate(request):
 		rollnos = []
 		if request.method == 'POST':
 			cursor = connection.cursor()
-			sql = "select rollno from rgenerate_rgrades where submit=True;"
+			sql = "select rollno from rgenerate_rgrades1 where submit=True;"
 			cursor.execute(sql)
 			results = cursor.fetchall()
 			for rows in results:
@@ -29,5 +29,5 @@ def generate(request):
 				st1 = rollnos[i+1]
 				st2 = rollnos[i+2]
 				st3 = rollnos[i+3]
-				sql = "update rgenerate_rgrades set st1 = '"+st1+"', st2 = '"+st2+"', st3 = '"+st3+"' where rollno = '"+rollnos[i]+"';"
+				sql = "update rgenerate_rgrades1 set st1 = '"+st1+"', st2 = '"+st2+"', st3 = '"+st3+"' where rollno = '"+rollnos[i]+"';"
 				cursor.execute(sql)

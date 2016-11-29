@@ -79,16 +79,15 @@
 	<div class="header-limiter">
 		<h1><a href="#">Welcome {{ luser }}</a></h1>
 
-		
+
 
 		<div class="header-user-menu">
-		
+
 			<img src="/static/images/2.png" alt="User Image"/>
 
 			<ul>
 				<li><a href="#">Settings</a></li>
-				<li><a href="#">Payments</a></li>
-				<li><a href="#" class="highlight">Logout</a></li>
+				<li><a href="/logout" class="highlight">Logout</a></li>
 			</ul>
 		</div>
 
@@ -101,7 +100,7 @@
 		<!-- Wrap -->
 		<div class="wrap agileits w3layouts">
 
-			
+
 
 
 			<!-- Navbar -->
@@ -109,9 +108,9 @@
 				<ul>
 					<li>
 						<div class="item-container agileits w3layouts">
-						<a href='#'>
+						<a href='/home'>
 							<div class="item-top aits">Home</div>
-							
+
 							<div class="item-bottom w3l">Home</div></a>
 						</div>
 					</li>
@@ -123,7 +122,7 @@
 						</div>
 					</li>
 					<li>
-					
+
 						<div class="item-container agileits w3layouts">
 						<a href='#'>
 							<div class="item-top aits">About</div>
@@ -132,7 +131,7 @@
 					</li>
 					<li>
 						<div class="item-container agileits w3layouts">
-						<a href='#'>
+						<a href='/contact'>
 							<div class="item-top aits">Contact</div>
 							<div class="item-bottom w3l">Contact</div></a>
 						</div>
@@ -143,34 +142,34 @@
 
 
 
-                
 
 
 
 
 
 
-                                
 
 
 
-					
-
-
-					
 
 
 
-					
 
 
-						
 
 
-				
 
 
-						
+
+
+
+
+
+
+
+
+
+
 
 
 					<!-- Tabs -->
@@ -182,13 +181,13 @@
 
 								<ul class="resp-tabs-list agileits w3layouts">
 									<li class="resp-tab-item aits w3layouts" aria-controls="tab_item-1" role="tab"><span>Notifications</span></li>
-									
+
 									<li class="resp-tab-item w3ls agileits" aria-controls="tab_item-2" role="tab"><span>Notes</span></li>
-									
+
 									<li class="resp-tab-item aits agileits" aria-controls="tab_item-3" role="tab"><span>Assingnment</span></li>
-									
+
 									<li class="resp-tab-item w3ls w3layouts" aria-controls="tab_item-4" role="tab"><span>Notice</span></li>
-									
+
 									<div class="clear"> </div>
 								</ul>
 
@@ -197,32 +196,32 @@
 									<div class="tab-1 resp-tab-content w3ls w3layouts" aria-labelledby="tab_item-1">
 										<div class="content">
 			<div class="content-top">
-				
-					
+
+
 					<ul>
-						
+
 						{% for c in feeds %}
 							{{ c|safe }}
 						{% endfor %}
-							
+
 					</ul>
 					<p><a href="#">Load more</a></p>
 			</div>
 		</div>
-		
+
 									</div>
 
 									<div class="tab-2 resp-tab-content aits agileits" aria-labelledby="tab_item-2">
 										<div class="content">
 			<div class="content-top">
-				
-					
+
+
 					<ul>
-						
+
 						{% for cs in notes %}
 							{{ cs|safe }}
 						{% endfor %}
-							
+
 					</ul>
 					<p><a href="#">Load more</a></p>
 			</div>
@@ -232,14 +231,14 @@
 									<div class="tab-3 resp-tab-content w3ls agileits" aria-labelledby="tab_item-3">
 										<div class="content">
 			<div class="content-top">
-				
-					
+
+
 					<ul>
-						
+
 						{% for csc in assing %}
 							{{ csc|safe }}
 						{% endfor %}
-							
+
 					</ul>
 					<p><a href="#">Load more</a></p>
 			</div>
@@ -249,14 +248,14 @@
 									<div class="tab-4 resp-tab-content aits w3layouts" aria-labelledby="tab_item-4">
 										<div class="content">
 			<div class="content-top">
-				
-					
+
+
 					<ul>
-						
+
 						{% for cscs in notice %}
 							{{ cscs|safe }}
 						{% endfor %}
-							
+
 					</ul>
 					<p><a href="#">Load more</a></p>
 			</div>
@@ -275,13 +274,13 @@
 
 
 
-					
-						
 
 
 
 
-					
+
+
+
 
 
 
@@ -431,7 +430,7 @@
 							obj.dd.on('click', function(event){
 								$(this).toggleClass('active');
 								event.stopPropagation();
-							});	
+							});
 						}
 					}
 					$(function() {

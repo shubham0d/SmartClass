@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^home/$', include('userhome.urls')),
     url(r'^quiz/$', 'userhome.views.quiz', name='quiz'),
     url(r'^logout/$', 'login.views.logout', name='logout'),
+    url(r'^contact/$', 'userhome.views.contact', name='contact'),
 ]

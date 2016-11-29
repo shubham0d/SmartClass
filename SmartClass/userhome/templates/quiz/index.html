@@ -24,7 +24,7 @@
 
 	<!-- Custom-Stylesheet-Links -->
 		<link rel="stylesheet" href="/static/css/style1.css" 														type="text/css" media="all">
-            
+
 		<link rel="stylesheet" href="/static/css/header-user-dropdown.css">
 		<link rel="stylesheet" href="/static/css/sform.css" 														type="text/css" media="all">
 		<link rel="stylesheet" href="/static/css/qupload.css" 														type="text/css" media="all">
@@ -79,16 +79,16 @@
 	<div class="header-limiter">
 		<h1><a href="#">Welcome {{ luser }}</a></h1>
 
-		
+
 
 		<div class="header-user-menu">
-		
+
 			<img src="/static/images/2.png" alt="User Image"/>
 
 			<ul>
 				<li><a href="#">Settings</a></li>
-				<li><a href="#">Payments</a></li>
-				<li><a href="#" class="highlight">Logout</a></li>
+				<!--<li><a href="#">Payments</a></li>-->
+				<li><a href="/logout" class="highlight">Logout</a></li>
 			</ul>
 		</div>
 
@@ -101,7 +101,7 @@
 		<!-- Wrap -->
 		<div class="wrap agileits w3layouts">
 
-			
+
 
 
 			<!-- Navbar -->
@@ -111,7 +111,7 @@
 						<div class="item-container agileits w3layouts">
 						<a href='/home'>
 							<div class="item-top aits">Home</div>
-							
+
 							<div class="item-bottom w3l">Home</div></a>
 						</div>
 					</li>
@@ -123,7 +123,7 @@
 						</div>
 					</li>
 					<li>
-					
+
 						<div class="item-container agileits w3layouts">
 						<a href='#'>
 							<div class="item-top aits">About</div>
@@ -132,7 +132,7 @@
 					</li>
 					<li>
 						<div class="item-container agileits w3layouts">
-						<a href='#'>
+						<a href='/contact'>
 							<div class="item-top aits">Contact</div>
 							<div class="item-bottom w3l">Contact</div></a>
 						</div>
@@ -143,34 +143,34 @@
 
 
 
-                
 
 
 
 
 
 
-                                
 
 
 
-					
-
-
-					
 
 
 
-					
 
 
-						
 
 
-				
 
 
-						
+
+
+
+
+
+
+
+
+
+
 
 
 					<!-- Tabs -->
@@ -182,30 +182,30 @@
 
 								<ul class="resp-tabs-list agileits w3layouts">
 									<li class="resp-tab-item aits w3layouts" aria-controls="tab_item-1" role="tab"><span>Available</span></li>
-									
+
 									<li class="resp-tab-item w3ls agileits" aria-controls="tab_item-2" role="tab"><span>Upload</span></li>
-									
+
 									<li class="resp-tab-item aits agileits" aria-controls="tab_item-3" role="tab"><span>Check</span></li>
-									
+
 									<li class="resp-tab-item w3ls w3layouts" aria-controls="tab_item-4" role="tab"><span>Results</span></li>
-									
+
 									<div class="clear"> </div>
 								</ul>
 
 								<div class="resp-tabs-container agileits w3layouts">
 
 									<div class="tab-1 resp-tab-content w3ls w3layouts" aria-labelledby="tab_item-1">
-										
+
 									<div class="content">
 			<div class="content-top">
-				
-					
+
+
 					<ul>
-						
+
 						{% for c in quizzez %}
 							{{ c|safe }}
 						{% endfor %}
-							
+
 					</ul>
 					<p><a href="#">Load more</a></p>
 			</div>
@@ -238,18 +238,18 @@
 
 		</div>
 </div>
-												
+
 									</div>
 
 									<div class="tab-3 resp-tab-content w3ls agileits" aria-labelledby="tab_item-3">
 									<center><p>Submit before 20 April 2016</p></center>
-									
+
 									<div class="content">
 									<div class="content-top">
-										
-										
+
+
 										<li>
-										<embed src="/static/uploads/{{ st1 }}" width="1000px" height="800px" />
+										<embed src="/static/uploads/st1.pdf" width="1000px" height="800px" />
 										</li>
 										<ul>
         <form action="" method="post">
@@ -267,8 +267,8 @@
                 <option value="F">He's gone&hellip;</option>
             </select>
         </li>
-       
-       
+
+
         <li>
         	<label for="message">Comment/Reason:</label>
             <textarea cols="50" rows="5" id="message"></textarea>
@@ -278,7 +278,7 @@
         <button type="submit" class="action">Call to action</button>
         <button type="reset" class="right">Reset</button>
     </p>
-    
+
 									</div>
 									</div>
 									</br>
@@ -289,11 +289,11 @@
 										<div class="content">
 									<div class="content-top">
 										<li>
-										<embed src="/static/uploads/{{ st2 }}" width="1000px" height="800px" />
+										<embed src="/static/uploads/st2.pdf" width="1000px" height="800px" />
 
 										</li>
 										 <ul>
-        
+
         <li>
             <label for="st2">What's my options:</label>
             <select id="car" name="std2">
@@ -307,8 +307,8 @@
                 <option value="F">He's gone&hellip;</option>
             </select>
         </li>
-       
-       
+
+
         <li>
         	<label for="message">Comment/Reason:</label>
             <textarea cols="50" rows="5" id="message"></textarea>
@@ -328,11 +328,11 @@
 										<div class="content">
 									<div class="content-top">
 										<li>
-										<embed src="/static/uploads/{{ st3 }}" width="1000px" height="800px" />
+										<embed src="/static/uploads/st3.pdf" width="1000px" height="800px" />
 										</li>
 
 										<ul>
-        
+
         <li>
             <label for="st3">What's my options:</label>
             <select id="car" name="std3">
@@ -346,8 +346,8 @@
                 <option value="F">He's gone&hellip;</option>
             </select>
         </li>
-       
-       
+
+
         <li>
         	<label for="message">Comment/Reason:</label>
             <textarea cols="50" rows="5" id="message"></textarea>
@@ -361,14 +361,14 @@
 									</div>
 									</div>
 									</br>
-									
-										
+
+
 
 									</div>
 
 									<div class="tab-4 resp-tab-content aits w3layouts" aria-labelledby="tab_item-4">
-										
-							
+
+
 
 						</div>
 
@@ -378,13 +378,13 @@
 
 
 
-					
-						
 
 
 
 
-					
+
+
+
 
 
 
@@ -534,7 +534,7 @@
 							obj.dd.on('click', function(event){
 								$(this).toggleClass('active');
 								event.stopPropagation();
-							});	
+							});
 						}
 					}
 					$(function() {

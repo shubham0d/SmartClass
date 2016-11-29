@@ -103,20 +103,20 @@ def notify(request):
 			if c=='U': #if it is upload
 				line1="<li><h2>Topic:"+str(topic[i])+"</h2></br>"
 				line2 = 'Faculty has uploaded a '+str(typeof[i])+''
-				line3 = "<a href=""><i>"+str(path[i])+"</i></a>"
+				line3 = '<a href="'+str(path[i])+'"><i>'+str(path[i])+'</i></a>'
 				line4 = "<span>Last Date:</span>"+str(lastdate[i])+"</br>"
-				
+
 				line6 = "<span>Comment:</span>"+str(comment[i])+""
 				line5 = "<p><span>Date:"+str(date[i])+"</span></p></li>"
 				ftext.append(line1+line2+line3+line4+line6+line5)
 			elif c=='C': #if it is comment
 				line1="<li><h2>Topic:"+str(topic[i])+"</h2></br>"
-				line3 = "<a href=""><i>"+str(path[i])+"</i></a>"
-							
+				line3 = '<a href="'+str(path[i])+'"><i>'+str(path[i])+'</i></a>'
+
 				line6 = "<span>Comment:</span>"+str(comment[i])+""
 				line5 = "<p><span>Date:"+str(date[i])+"</span></p></li>"
 				ftext.append(line1+line3+line6+line5)
-				
+
 			i=i+1
 
 		################notifications end##################
@@ -138,9 +138,9 @@ def notify(request):
 		for c in activity1:
 				line1="<li><h2>Topic:"+str(topic1[k])+"</h2></br>"
 				line2 = 'Faculty has uploaded a '+str(typeof1[k])+''
-				line3 = "<a href=""><i>"+str(path1[k])+"</i></a>"
+				line3 = '<a href="'+str(path[k1])+'"><i>'+str(path[k1])+'</i></a>'
 				line4 = "<span>Last Date:</span>"+str(lastdate1[k])+"</br>"
-				
+
 				line6 = "<span>Comment:</span>"+str(comment1[k])+""
 				line5 = "<p><span>Date:"+str(date1[k])+"</span></p></li>"
 				ftext2.append(line1+line2+line3+line4+line6+line5)
@@ -166,9 +166,9 @@ def notify(request):
 		for c in activity2:
 				line1="<li><h2>Topic:"+str(topic2[k2])+"</h2></br>"
 				line2 = 'Faculty has uploaded a '+str(typeof2[k2])+''
-				line3 = "<a href=""><i>"+str(path2[k2])+"</i></a>"
+				line3 = '<a href="'+str(path[k2])+'"><i>'+str(path[k2])+'</i></a>'
 				line4 = "<span>Last Date:</span>"+str(lastdate2[k2])+"</br>"
-				
+
 				line6 = "<span>Comment:</span>"+str(comment2[k2])+""
 				line5 = "<p><span>Date:"+str(date2[k2])+"</span></p></li>"
 				ftext3.append(line1+line2+line3+line4+line6+line5)
@@ -192,8 +192,8 @@ def notify(request):
 		k3=0
 		for c in activity3:
 			line1="<li><h2>Topic:"+str(topic3[k3])+"</h2></br>"
-			line3 = "<a href=""><i>"+str(path3[k3])+"</i></a>"
-								
+			line3 = '<a href="'+str(path[k3])+'"><i>'+str(path[k3])+'</i></a>'
+
 			line6 = "<span>Comment:</span>"+str(comment3[k3])+""
 			line5 = "<p><span>Date:"+str(date3[k3])+"</span></p></li>"
 			ftext4.append(line1+line3+line6+line5)
@@ -232,7 +232,7 @@ def quiz(request):
 			topic.append(rows[3])
 			lastdate.append(rows[4])
 			path.append(rows[5])
-		
+
 		m=0
 		for c in quizno:
 				line1="<li><h2>Quiz No:"+str(quizno[m])+"</h2></br>"
@@ -247,16 +247,17 @@ def quiz(request):
 				grade1 = request.POST['std1']
 				grade2 = request.POST['std2']
 				grade3 = request.POST['std3']
-				print grade1,grade2,grade3
+				#print grade1,grade2,grade3
+				#print user_rollno
 				if grade1!="oo":
-					sql = "UPDATE rgenerate_rgrades SET grd1='"+grade1+"' WHERE rollno='"+user_rollno+"';"
+					sql = "UPDATE rgenerate_rgrades1 SET grd1='"+grade1+"' WHERE rollno='"+user_rollno+"';"
 					cursor.execute(sql)
 
 				if grade2!="oo":
-					sql = "UPDATE rgenerate_rgrades SET grd2='"+grade2+"' WHERE rollno='"+user_rollno+"';"
+					sql = "UPDATE rgenerate_rgrades1 SET grd2='"+grade2+"' WHERE rollno='"+user_rollno+"';"
 					cursor.execute(sql)
 				if grade3!="oo":
-					sql = "UPDATE rgenerate_rgrades SET grd2='"+grade2+"' WHERE rollno='"+user_rollno+"';"
+					sql = "UPDATE rgenerate_rgrades1 SET grd2='"+grade2+"' WHERE rollno='"+user_rollno+"';"
 					cursor.execute(sql)
 
 		#cheking section starts here
@@ -267,7 +268,7 @@ def quiz(request):
 		for rows in results:
 			user_rollno = rows[0]
 		#now get the random alloted students rollno
-		sql = "select st1 from rgenerate_rgrades where rollno = '"+user_rollno+"';"
+		sql = "select st1 from rgenerate_rgrades1 where rollno = '"+user_rollno+"';"
 		cursor.execute(sql)
 		results = cursor.fetchall()
 		if results==(): #means he doesn't submitted
@@ -275,14 +276,14 @@ def quiz(request):
 		else:
 			for rows in results:
 				st1 = rows[0]
-			
-			sql = "select st2 from rgenerate_rgrades where rollno = '"+user_rollno+"';"
+
+			sql = "select st2 from rgenerate_rgrades1 where rollno = '"+user_rollno+"';"
 			cursor.execute(sql)
 			results = cursor.fetchall()
 			for rows in results:
 				st2 = rows[0]
 
-			sql = "select st3 from rgenerate_rgrades where rollno = '"+user_rollno+"';"
+			sql = "select st3 from rgenerate_rgrades1 where rollno = '"+user_rollno+"';"
 			cursor.execute(sql)
 			results = cursor.fetchall()
 			for rows in results:
@@ -292,5 +293,19 @@ def quiz(request):
 			return render(request, 'quiz/index.html', {'quizzez':ftext, 'luser':luser, 'st1':st1, 'st2':st2, 'st3':st3 })
 
 		return render(request, 'quiz/index.html',{'quizzez':ftext, 'luser':luser})
+	else:
+		return HttpResponseRedirect('/')
+
+
+
+def contact(request):
+	if 'user' in request.COOKIES:
+		print request.COOKIES['user']
+		luser = request.COOKIES['user']
+		if luser =='':
+			response=HttpResponseRedirect('/')
+			return response
+
+		return render(request, 'contact/index.html', {'luser':luser})
 	else:
 		return HttpResponseRedirect('/')

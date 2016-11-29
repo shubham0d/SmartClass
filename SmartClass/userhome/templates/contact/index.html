@@ -1,0 +1,436 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<head>
+
+	<title>UserHome</title>
+
+	<!-- Meta-Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="keywords" content="Collective UI Kit Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //Meta-Tags -->
+
+	<!-- Custom-Stylesheet-Links -->
+		<link rel="stylesheet" href="/static/css/style1.css" 														type="text/css" media="all">
+    <link rel="stylesheet" href="/static/css/contact.css" 														type="text/css" media="all">
+    <link rel="stylesheet" href="/static/css/header-user-dropdown.css">
+		<link rel="stylesheet" href="/static/css/feed.css"
+		    type="text/css" media="all">
+		<link rel="stylesheet" href="/static/css/clndr.css" 														type="text/css" media="all">
+		<link rel="stylesheet" href="/static/css/acornmediaplayer.base.css" 										type="text/css" media="all">
+		<link rel="stylesheet" href="/static/css/acorn.access.css" 									type="text/css" media="all">
+		<link rel="stylesheet" href="/static/css/audio.css" 														type="text/css" media="all">
+		<link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" 		type="text/css" media="all">
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" 	type="text/css" media="all">
+	<!-- //Custom-Stylesheet-Links -->
+
+	<!-- Web-Fonts -->
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,500,600,700,800" 		type="text/css" media="all">
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" 			type="text/css" media="all">
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,900,700,500,300,100" 	type="text/css" media="all">
+	<!-- //Web-Fonts -->
+
+	<!-- Time-JavaScript -->
+		<script>
+			function startTime() {
+				var today = new Date();
+				var h = today.getHours();
+				var m = today.getMinutes();
+				var s = today.getSeconds();
+				m = checkTime(m);
+				s = checkTime(s);
+				document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+				var t = setTimeout(startTime, 500);
+			}
+			function checkTime(i) {
+				if (i < 10) {i = "0" + i};
+				return i;
+			}
+		</script>
+	<!-- //Time-JavaScript -->
+
+	<!-- Chart -->
+		<script src="/static/js/Chart.js"></script>
+	<!-- //Chart -->
+
+</head>
+<!-- //Head -->
+
+
+
+	<!-- Body -->
+	<body onload="startTime()">
+
+
+
+			<header class="header-user-dropdown">
+
+	<div class="header-limiter">
+		<h1><a href="#">Welcome {{ luser }}</a></h1>
+
+
+
+		<div class="header-user-menu">
+
+			<img src="/static/images/2.png" alt="User Image"/>
+
+			<ul>
+				<li><a href="#">Settings</a></li>
+				<li><a href="/logout" class="highlight">Logout</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+</header>
+
+		<h1>SmartClass Home</h1>
+
+		<!-- Wrap -->
+		<div class="wrap agileits w3layouts">
+
+
+
+
+			<!-- Navbar -->
+			<nav>
+				<ul>
+					<li>
+						<div class="item-container agileits w3layouts">
+						<a href='/home'>
+							<div class="item-top aits">Home</div>
+
+							<div class="item-bottom w3l">Home</div></a>
+						</div>
+					</li>
+					<li>
+						<div class="item-container agileits w3layouts">
+						<a href='/quiz'>
+							<div class="item-top aits">Quiz</div>
+							<div class="item-bottom w3l">Quiz</div></a>
+						</div>
+					</li>
+					<li>
+
+						<div class="item-container agileits w3layouts">
+						<a href='#'>
+							<div class="item-top aits">About</div>
+							<div class="item-bottom w3l">About</div></a>
+						</div>
+					</li>
+					<li>
+						<div class="item-container agileits w3layouts">
+						<a href='/contact'>
+							<div class="item-top aits">Contact</div>
+							<div class="item-bottom w3l">Contact</div></a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+			<!-- //Navbar -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="content">
+			<h1 style="color:#2c3338">Contact Form</h1>
+      <form id="contact-form" method="post">
+				{% csrf_token %}
+        <p>Dear Sir,</p>
+        <p>My
+          <label for="your-name">rollno</label> is
+          <input type="text" name="your-name" id="your-name" minlength="3" placeholder="(your rollno here)" required> and</p>
+</br>
+        <p>my
+          <label for="email">email address</label> is
+          <input type="email" name="your-email" id="email" placeholder="(your email address)" required>
+        </p>
+			</br>
+        <p> I have a
+          <label for="your-message">message</label> for you,</p>
+
+        <p>
+          <textarea name="your-message" id="your-message" placeholder="(your msg here)" class="expanding" required></textarea>
+        </p>
+        <p>
+          <button type="submit">
+            <svg version="1.1" class="send-icn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="36px" viewBox="0 0 100 36" enable-background="new 0 0 100 36" xml:space="preserve">
+              <path d="M100,0L100,0 M23.8,7.1L100,0L40.9,36l-4.7-7.5L22,34.8l-4-11L0,30.5L16.4,8.7l5.4,15L23,7L23.8,7.1z M16.8,20.4l-1.5-4.3
+      	l-5.1,6.7L16.8,20.4z M34.4,25.4l-8.1-13.1L25,29.6L34.4,25.4z M35.2,13.2l8.1,13.1L70,9.9L35.2,13.2z" />
+            </svg>
+            <small>send</small>
+          </button>
+        </p>
+      </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				</div>
+				<!-- //Vertical-Grid-2 -->
+
+				<div class="clear"></div>
+
+			</div>
+			<!-- //Vertical-Grids -->
+
+
+
+		</div>
+		<!-- //Wrap -->
+
+
+
+		<!-- Copyright -->
+		<div class="copyright agileits w3layouts">
+			<p> &copy; SmartClass|<a href="/logout" target="_self"> Logout </a></p>
+		</div>
+		<!-- //Copyright -->
+
+
+
+		<!-- Custom-JavaScript-File-Links -->
+
+			<!-- Default-JavaScript --> <script type="text/javascript" src="/static/js/jquery-2.1.4.min.js"></script>
+      <script type="text/javascript" src="/static/js/index.js"></script>
+			<!-- Slider-JavaScript -->
+				<script src="/static/js/responsiveslides.min.js"></script>
+				<script>
+					$(function () {
+						$("#slider, #slider2").responsiveSlides({
+							auto: true,
+							nav: true,
+							speed: 1500,
+							namespace: "callbacks",
+							pager: true,
+						});
+					});
+				</script>
+			<!-- //Slider-JavaScript -->
+
+			<!-- Icon-Navbar-JavaScript -->
+				<script type="text/javascript">
+					$(window).load(function() {
+						$('a.btn').click(function() {
+							$(this).toggleClass("active");
+						});
+					});
+				</script>
+			<!-- //Icon-Navbar-JavaScript -->
+
+			<!-- File-Upload-Widget-JavaScript -->
+				<!-- JavaScript-Includes -->
+				<script src="/static/js/jquery.knob.js"></script>
+				<!-- JavaScript Includes -->
+
+				<!-- jQuery-File-Upload-Dependencies -->
+				<script src="/static/js/jquery.ui.widget.js"></script>
+				<script src="/static/js/jquery.iframe-transport.js"></script>
+				<script src="/static/js/jquery.fileupload.js"></script>
+				<!-- //jQuery-File-Upload-Dependencies -->
+
+				<!-- Main JavaScript file -->
+					<script src="/static/js/script.js"></script>
+				<!-- Main JavaScript file -->
+			<!-- //File-Upload-Widget-JavaScript -->
+
+			<!-- Weather-Widget-JavaScript -->
+				<script src="/static/js/skycons.js"></script>
+				<script>
+					var icons = new Skycons({"color": "#FFD700"}),
+					list  = [
+						"clear-day"
+					],
+					i;
+					for(i = list.length; i--; )
+					icons.set(list[i], list[i]);
+					icons.play();
+				</script>
+				<script>
+					var icons = new Skycons({"color": "#f5f5f5"}),
+					list = [
+						"clear-night", "partly-cloudy-day",	"partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind", "fog"
+					],
+					i;
+					for(i = list.length; i--; )
+					icons.set(list[i], list[i]);
+					icons.play();
+				</script>
+			<!--//Weather-Widget-JavaScript -->
+
+			<!-- Pricing-Popup-Box-JavaScript -->
+				<script src="/static/js/jquery.magnific-popup.js" type="text/javascript"></script>
+				<script>
+					$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+						});
+					});
+				</script>
+			<!-- //Pricing-Popup-Box-JavaScript -->
+
+			<!-- Calender-JavaScript -->
+				<script src="/static/js/underscore-min.js"></script>
+				<script src= "/static/js/moment-2.2.1.js"></script>
+				<script src="/static/js/clndr.js"></script>
+				<script src="/static/js/site.js"></script>
+			<!-- //Calender-JavaScript -->
+
+			<!-- Horizontal-Tabs-JavaScript -->
+				<script src="/static/js/easyResponsiveTabs.js" type="text/javascript"></script>
+				<script type="text/javascript">
+				$(document).ready(function () {
+					$('#horizontalTab').easyResponsiveTabs({
+						type: 'default',
+						width: 'auto',
+						fit: true,
+					});
+				});
+				</script>
+			<!-- //Horizontal-Tabs-JavaScript -->
+
+			<!-- Tabs-JavaScript --> <script src="/static/js/tabs.js"></script>
+
+			<!-- Vertical-Accordion-JavaScript -->
+				<script type="text/javascript">
+					function DropDown(el) {
+						this.dd = el;
+						this.initEvents();
+					}
+					DropDown.prototype = {
+						initEvents : function() {
+							var obj = this;
+							obj.dd.on('click', function(event){
+								$(this).toggleClass('active');
+								event.stopPropagation();
+							});
+						}
+					}
+					$(function() {
+						var dd = new DropDown( $('#dd1') );
+						$(document).click(function() {
+							$('.wrapper-dropdown-1').removeClass('active');
+						});
+					});
+				</script>
+			<!-- //Vertical-Accordion-JavaScript -->
+
+			<!-- Video-Player-JavaScript -->
+				<script src="/static/js/jquery-ui-1.10.0.custom.min.js"></script>
+				<script src="/static/js/modernizr.custom.js"></script>
+				<script src="/static/js/jquery.acornmediaplayer.js"></script>
+				<!-- Call the plugin -->
+				<script>
+					jQuery(function() {
+						jQuery('video, audio').acornMediaPlayer();
+					});
+				</script>
+			<!-- //Video-Player-JavaScript -->
+
+			<!-- Map-JavaScript -->
+				<script src="/static/js/jquery.vmap.js" type="text/javascript"></script>
+				<script src="/static/js/jquery.vmap.usa.js" type="text/javascript"></script>
+				<script type="text/javascript">
+					jQuery(document).ready(function() {
+						jQuery('#vmap').vectorMap({
+							map: 'usa_en',
+							enableZoom: true,
+							showTooltip: true,
+							selectedRegion: 'AK',
+						});
+					});
+				</script>
+			<!-- //Map-JavaScript -->
+
+			<!-- Slide-To-Top JavaScript -->
+				<script type="text/javascript">
+					$(document).ready(function() {
+						var defaults = {
+							containerID: 'toTop',
+							containerHoverID: 'toTopHover',
+							scrollSpeed: 100,
+							easingType: 'linear',
+						};
+						$().UItoTop({ easingType: 'easeOutQuart' });
+					});
+				</script>
+				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 0;"> </span></a>
+			<!-- //Slide-To-Top JavaScript -->
+
+			<!-- Smooth-Scrolling-JavaScript -->
+				<script type="text/javascript" src="/static/js/move-top.js"></script>
+				<script type="text/javascript" src="/static/js/easing.js"></script>
+				<script type="text/javascript">
+						jQuery(document).ready(function($) {
+							$(".scroll, .navbar li a, .footer li a").click(function(event){
+								$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+							});
+						});
+				</script>
+			<!-- //Smooth-Scrolling-JavaScript -->
+
+		<!-- //Custom-JavaScript-File-Links -->
+
+	</body>
+	<!-- //Body -->
+
+
+
+</html>
